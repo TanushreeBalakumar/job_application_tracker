@@ -61,7 +61,9 @@ class _LoginPageState extends State<LoginPage> {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                context.push('/home');
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blueAccent[400], 
                 padding: const EdgeInsets.symmetric(horizontal: 140, vertical: 10),
