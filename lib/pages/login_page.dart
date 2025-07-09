@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -128,8 +129,11 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('New to JobApplicationTracker?'),
-                TextButton(onPressed: () {}, 
-                child: Text('Register', style: TextStyle(color: const Color.fromARGB(255, 11, 70, 172), fontWeight: FontWeight.bold),)),
+                TextButton(
+                  onPressed: () {
+                    context.push('/signup');
+                  },
+                  child: Text('Register', style: TextStyle(color: const Color.fromARGB(255, 11, 70, 172), fontWeight: FontWeight.bold),)),
               ],
             ),
             

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:job_application_tracker/pages/login_page.dart';
-
+import 'package:job_application_tracker/router.dart';
 
 void main() {
-   WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
+    const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
     ),
   );
@@ -15,14 +14,15 @@ void main() {
   runApp(const MyApp());
 }
 
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      routerConfig: router,
     );
   }
 }
