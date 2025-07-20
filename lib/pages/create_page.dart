@@ -82,7 +82,8 @@ class _CreatePageState extends ConsumerState<CreatePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Add Job')),
+      backgroundColor: Colors.cyan[100],
+      appBar: AppBar(title: const Text('Add Job'), backgroundColor: Colors.cyan,),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : Padding(
@@ -91,18 +92,21 @@ class _CreatePageState extends ConsumerState<CreatePage> {
                 key: _formKey,
                 child: Column(
                   children: [
+                    SizedBox(height: 20),
                     TextFormField(
                       controller: _titleController,
                       decoration: const InputDecoration(labelText: 'Job Title'),
                       validator: (value) =>
                           value!.isEmpty ? 'Please enter a job title' : null,
                     ),
+                    SizedBox(height: 20),
                     TextFormField(
                       controller: _companyController,
                       decoration: const InputDecoration(labelText: 'Company Name'),
                       validator: (value) =>
                           value!.isEmpty ? 'Please enter a company name' : null,
                     ),
+                    SizedBox(height: 20),
                     TextFormField(
                       controller: _statusController,
                       decoration: const InputDecoration(labelText: 'Status'),

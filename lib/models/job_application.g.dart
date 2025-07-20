@@ -18,7 +18,7 @@ JobApplication _$JobApplicationFromJson(Map<String, dynamic> json) =>
       userId: json['user_id'] as String,
     );
 
-Map<String, dynamic> _$JobApplicationToJson(JobApplication instance) =>
+/*Map<String, dynamic> _$JobApplicationToJson(JobApplication instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
@@ -29,3 +29,4 @@ Map<String, dynamic> _$JobApplicationToJson(JobApplication instance) =>
       'file_url': instance.fileUrl,
       'user_id': instance.userId,
     };
+*/

@@ -66,21 +66,25 @@ class _EditPageState extends ConsumerState<EditPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Edit Job')),
+      backgroundColor: Colors.cyanAccent[100],
+      appBar: AppBar(title: const Text('Edit Job'),backgroundColor: Colors.cyanAccent,),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
+                  SizedBox(height: 20,),
                   TextFormField(
                     controller: _titleController,
                     decoration: const InputDecoration(labelText: 'Job Title'),
                   ),
+                  SizedBox(height: 20),
                   TextFormField(
                     controller: _companyController,
                     decoration: const InputDecoration(labelText: 'Company Name'),
                   ),
+                  SizedBox(height: 20),
                   TextFormField(
                     controller: _statusController,
                     decoration: const InputDecoration(labelText: 'Status'),

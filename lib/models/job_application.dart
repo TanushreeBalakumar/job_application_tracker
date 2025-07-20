@@ -36,7 +36,7 @@ class JobApplication {
       'title': title,
       'company': company,
       'status': status,
-      'applied_on': appliedOn.toIso8601String().substring(0, 10), // ✅ Correct Date Format
+      'applied_on': appliedOn.toIso8601String().substring(0, 10),
       'notes': notes,
       'file_url': fileUrl,
       'user_id': userId,

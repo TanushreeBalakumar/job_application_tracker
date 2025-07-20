@@ -30,7 +30,6 @@ class HomePage extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              /// Header (Greeting + Logout)
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -71,7 +70,6 @@ class HomePage extends ConsumerWidget {
 
               const SizedBox(height: 25),
 
-              /// Search Placeholder (Keep it or replace later)
               Container(
                 decoration: BoxDecoration(
                   color: Colors.cyan[50],
@@ -155,7 +153,7 @@ class HomePage extends ConsumerWidget {
                                       await ref
                                           .read(jobApplicationServiceProvider)
                                           .deleteJob(job.id);
-                                      ref.invalidate(jobApplicationsProvider); // Refresh list
+                                      ref.invalidate(jobApplicationsProvider); 
                                     }
                                   },
                                 ),
