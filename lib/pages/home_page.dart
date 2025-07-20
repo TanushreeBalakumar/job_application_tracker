@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:job_app/auth/auth_service.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -19,6 +20,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final user = Supabase.instance.client.auth.currentUser;
+    final fullName = user?.userMetadata?['full_name'] ?? 'User';
+    
     return Scaffold(
       backgroundColor: Colors.cyan[200],
       body: SafeArea(
@@ -33,7 +37,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Hi, ${authService.getCurrentUserEmail() ?? 'User'}!',
+                        'Hi, $fullName!',
                         style: TextStyle(
                         color: Colors.black87,
                         fontSize: 24,

@@ -14,11 +14,13 @@ class _SignupPageState extends State<SignupPage> {
   final authService = AuthService();
 
   final _emailController = TextEditingController();
+  final _fullNameController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
 
   void signUp() async {
     final email = _emailController.text;
+    final fullName = _fullNameController.text;
     final password = _passwordController.text;
     final confirmPassword = _confirmPasswordController.text;
 
@@ -28,7 +30,7 @@ class _SignupPageState extends State<SignupPage> {
     }
 
     try {
-      await authService.signUpWithEmailPassword(email, password);
+      await authService.signUpWithEmailPassword(email, password, fullName);
       if (!mounted) return;
       context.go('/login');
     } 
@@ -130,13 +132,9 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                     ),
                     TextField(
+                      controller: _fullNameController,
                       decoration: InputDecoration(
                         labelText: 'Full name', prefixIcon: Icon(Icons.face),
-                      ),
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Education', prefixIcon: Icon(Icons.school),
                       ),
                     ),
                     TextField(
