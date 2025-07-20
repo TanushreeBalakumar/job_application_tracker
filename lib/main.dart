@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:job_app/router.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 Future<void> main() async {
   await Supabase.initialize(
     url: 'https://llaxtmaszzhmbtqaqzfo.supabase.co',
@@ -17,7 +17,11 @@ Future<void> main() async {
   );
 
 
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+      ),
+    );
 }
 
 

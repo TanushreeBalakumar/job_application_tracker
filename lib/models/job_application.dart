@@ -30,5 +30,16 @@ class JobApplication {
   factory JobApplication.fromJson(Map<String, dynamic> json) =>
       _$JobApplicationFromJson(json);
 
-  Map<String, dynamic> toJson() => _$JobApplicationToJson(this);
+  //Map<String, dynamic> toJson() => _$JobApplicationToJson(this);
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'company': company,
+      'status': status,
+      'applied_on': appliedOn.toIso8601String().substring(0, 10), // ✅ Correct Date Format
+      'notes': notes,
+      'file_url': fileUrl,
+      'user_id': userId,
+    };
+  }
 }

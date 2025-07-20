@@ -4,6 +4,7 @@ import 'package:job_app/pages/login_page.dart';
 import 'package:job_app/pages/signup_page.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:job_app/auth/auth_gate.dart';
+import 'package:job_app/pages/create_page.dart';
 
 final authStateNotifier = AuthStateNotifier();
 
@@ -34,6 +35,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/home',
       builder: (context, state) => const HomePage(),
+    ),
+    GoRoute(
+      path: '/create',
+      builder: (context, state) => const CreatePage(),
     ),
   ],
 );
